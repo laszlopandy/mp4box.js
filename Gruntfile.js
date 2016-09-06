@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     concat: {
       options: {
         separator: '',
+        banner: 'var MP4Box = (function() {\n',
+        footer: '\nreturn MP4Box;\n})();\n',
         process: function(src, filepath) {
           return '// file:' + filepath + '\n' + src;
         }
@@ -59,7 +61,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n/* Generated from http://github.com/laszlopandy/mp4box.js */',
         sourceMap: true
       },
       all: {
