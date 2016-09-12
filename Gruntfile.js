@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     concat: {
       options: {
         separator: '',
-        banner: 'var MP4Box = (function() {\n',
-        footer: '\nreturn MP4Box;\n})();\n',
+        banner: 'function initMP4Box() {\n',
+        footer: '\nreturn MP4Box;\n}\n',
         process: function(src, filepath) {
           return '// file:' + filepath + '\n' + src;
         }
